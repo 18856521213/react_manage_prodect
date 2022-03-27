@@ -2,7 +2,8 @@ import React from 'react';
 import {Routes, Route, Navigate} from "react-router-dom";
 import Login from "../views/login/index.jsx";
 import Home from "../views/home/index.jsx";
-import userManage from "./userManage.js"
+import userManage from "./userManage.js";
+import DefaultPage from "../views/defaulePage/index.jsx"
 export const list = [
   userManage
 ]
@@ -11,6 +12,7 @@ export default function RouterList() {
     <>
       <Routes>
         <Route path="/" element={<Home />}>
+          <Route index element={<DefaultPage />}></Route>
           {
             list.map(item => {
               return (
