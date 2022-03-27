@@ -1,0 +1,9 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+}
+.box .echartsone,
+.box .echartstwo {
+  width: 45%;
+  height: 500px;
+}
