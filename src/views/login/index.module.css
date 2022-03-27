@@ -1,0 +1,109 @@
+.box{
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../static/img/bgImg.jpg");
+  position: relative;
+}
+.box .over {
+  display: none;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(255, 232, 128);
+  opacity: 0.5;
+}
+.box .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.box .content .leftContent {
+  width: 55%;
+}
+.box .content .rightContent {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.box .content .rightContent .login{
+  width: 480px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.box .content .rightContent .login .loginHeader{
+  position:relative;
+  font-size: 20px;
+  font-weight: 800;
+  padding-left: 20px;
+}
+.box .content .rightContent .login .loginHeader p::before{
+  content: " ";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 22px;
+  width: 7px;
+  border-radius: 5px;
+  background-color: #1890ff;
+}
+.box .content .rightContent .login .loginContent{
+  padding: 50px 22px 0 22px;
+
+}
+
+.box .content .rightContent .login .loginContent .username input,
+.box .content .rightContent .login .loginContent .password input{
+  outline: none;
+  border: none;
+  background-color: #f0f0f0;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  padding: 0 5px;
+  font-size: 15px;
+  border: 1px solid #dfdfdf;
+}
+
+.box .content .rightContent .login .loginContent .username input:focus,
+.box .content .rightContent .login .loginContent .password input:focus{
+  background-color: #fff;
+  border: 1px solid #1890ff;
+}
+.box .content .rightContent .login .loginContent div {
+  padding-bottom: 10px;
+}
+.box .content .rightContent .login .loginContent button {
+  width: 100%;
+  height: 50px;
+}
+.box .content .rightContent .login .loginContent div:nth-child(3) button {
+  outline: none;
+  border: 1px solid #1890ff;
+  background-color: #1890ff;
+  color: #fff;
+}
+.box .content .rightContent .login .loginContent div:nth-child(3) button:hover{
+  background-color: #0a87fc;
+}
+.box .content .rightContent .login .loginContent div:nth-child(5){
+  text-align: center;
+  color: #b4b4b4;
+  padding-top: 90px;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
