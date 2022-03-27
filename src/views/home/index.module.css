@@ -1,0 +1,9 @@
+.headerImg{
+  text-align: right;
+  cursor: pointer;
+  padding-right: 20px;
+}
+.headerImg .contentAvatar {
+  background-color: #f56a00;
+  vertical-align: middle;
+}

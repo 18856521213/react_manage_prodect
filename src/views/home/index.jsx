@@ -1,12 +1,31 @@
 import {useState, useEffect} from 'react'
 import "./index.css"
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import style from "./index.module.css"
+import { Outlet, Link, useLocation, useNavigate } from 'react-router-dom';
 import { list } from "../../router/index.js"
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Avatar, Popover, Button } from 'antd';
+import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
-export default function Home() {
+function PopoverContent(props) {
+  const loginOut = () => {
+    props.loginOut();
+  }
+  return (
+    <>
+      <div>
+        <Button type="link" icon={<UserOutlined />}>个人信息</Button>
+      </div>
+      <div>
+        <Button type="link" danger icon={<LogoutOutlined />} onClick={loginOut}>退出登录</Button>
+      </div>
+    </>
+  )
+}
+
+export default function Home(props) {
+  const navigate = useNavigate();
   const localhost = useLocation();
   const [navigateList, setNavigateList] = useState([]);
   useEffect(() => {
@@ -17,13 +36,21 @@ export default function Home() {
         }
       })
     })
-    console.log(localhost)
   }, [localhost])
+  const loginOut = () => {
+    navigate('/login')
+  }
   return (
     <>
       <Layout>
         <Header className="header">
-          <div className="logo" />
+          <div className={style.headerImg}>
+          <Popover placement="bottom" content={<PopoverContent loginOut={loginOut} />} trigger="click">
+            <Avatar className={style.contentAvatar} size="large" gap={4}>
+              张三
+            </Avatar>
+          </Popover>
+          </div>
         </Header>
         <Layout>
           <Sider width={200} className="site-layout-background">

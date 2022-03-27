@@ -1,3 +1,9 @@
+.contentBox {
+  display: flex;
+  padding: 10px 0 100px 0;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .box {
   display: flex;
   justify-content: space-between;
