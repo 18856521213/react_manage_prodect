@@ -13,7 +13,7 @@ echarts.use([
 ]);
 
 export default function DefaulePage() {
-  const [contentList, setContentList] = useState([
+  const [contentList] = useState([
     {
       icon: <UsergroupAddOutlined style={{fontSize: 50, color: "#73c0de"}} />,
       name: "添加用户",

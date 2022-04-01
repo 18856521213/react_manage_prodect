@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import style from "./index.module.css"
 import { useNavigate } from 'react-router-dom';
-import {message} from "antd"
+import {message} from "antd";
 export default function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -35,12 +35,14 @@ export default function Login() {
               <p>输入账号登录</p>
             </div>
             <div className={style.loginContent}>
-              <div className={style.username}>
-                <input type="text" value={username} name="username" placeholder='请输入用户名' onInput={valueChanage} />
-              </div>
-              <div className={style.password}>
-                <input type="password" value={password} name="password" placeholder='请输入密码' onInput={valueChanage}  />
-              </div>
+              <form action="#">
+                <div className={style.username}>
+                  <input type="text" autoComplete='off' value={username} name="username" placeholder='请输入用户名' onInput={valueChanage} />
+                </div>
+                <div className={style.password}>
+                  <input type="password" autoComplete='off' value={password} name="password" placeholder='请输入密码' onInput={valueChanage}  />
+                </div>
+              </form>
               <div>
                 <button onClick={login}>登录</button>
               </div>
