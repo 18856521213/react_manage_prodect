@@ -17,7 +17,6 @@ function App() {
   }
   return (
     <div className="App">
-      <button onClick={changeHandle}>点击事件</button>
       <AppContext.Provider value={store}>
         <RouterList />
       </AppContext.Provider>

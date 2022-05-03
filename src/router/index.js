@@ -11,12 +11,9 @@ export const list = [
 export default function RouterList() {
   const context = useContext(AppContext);
   const [token, setToken] = useState(context.getState().token);
-  console.log("router文件被执行了一次")
-  const unsubscribe = context.subscribe(() => {
-    console.log(context.getState())
+  context.subscribe(() => {
     setToken(context.getState().token);
   })
-  console.log(unsubscribe)
   if(token) {
     return (
       <>
